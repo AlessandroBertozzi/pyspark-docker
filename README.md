@@ -48,12 +48,8 @@ spark = SparkSession.builder \
     .getOrCreate()
 ```
 
-### Run Demo Scripts
-```bash
-python scripts/delta-demo.py
-python scripts/iceberg-demo.py  
-python scripts/hudi-demo.py
-```
+### Example Usage
+Use PySpark shell or Jupyter notebooks to interact with Spark.
 
 ## Data Lake Support
 

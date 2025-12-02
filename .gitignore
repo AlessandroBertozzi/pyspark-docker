@@ -16,12 +16,7 @@
 **/*-checkpoint.ipynb
 
 # Data directories
-**/data/output
-**/data/yellow_trip_data/
-**/data/**/*.parquet
-**/warehouse/*
-!**/warehouse/.gitkeep
-!**/warehouse/jupyter_installation_test.ipynb
+# (removed as directories no longer exist)
 
 # Spark logs and temporary files
 **/spark-logs

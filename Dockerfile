@@ -104,4 +104,4 @@ CMD [ "bash" ]
 
 # If Jupyter is installed, you will see an URL: `http://127.0.0.1:8889/?token=...`
 # This will open Jupyter web UI in your host machine browser.
-# Then go to /warehouse/ and test the installation.
+# Then go to /opt/spark/notebooks/ and test the installation.
