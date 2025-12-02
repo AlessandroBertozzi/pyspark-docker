@@ -17,7 +17,7 @@ RUN apt-get update && \
 ## Download spark and hadoop dependencies and install
 
 # ENV variables
-ENV SPARK_VERSION=3.5.7
+ENV SPARK_VERSION=4.0.1
 
 ENV SPARK_HOME=${SPARK_HOME:-"/opt/spark"}
 ENV HADOOP_HOME=${HADOOP_HOME:-"/opt/hadoop"}
@@ -36,8 +36,8 @@ RUN mkdir -p ${HADOOP_HOME} && mkdir -p ${SPARK_HOME}
 WORKDIR ${SPARK_HOME}
 
 # Download spark
-# see resources: https://dlcdn.apache.org/spark/spark-3.5.5/
-# filename: spark-3.5.5-bin-hadoop3.tgz 
+# see resources: https://dlcdn.apache.org/spark/spark-4.0.1/
+# filename: spark-4.0.1-bin-hadoop3.tgz 
 RUN mkdir -p ${SPARK_HOME} \
     && curl https://dlcdn.apache.org/spark/spark-${SPARK_VERSION}/spark-${SPARK_VERSION}-bin-hadoop3.tgz -o spark-${SPARK_VERSION}-bin-hadoop3.tgz \
     && tar xvzf spark-${SPARK_VERSION}-bin-hadoop3.tgz --directory ${SPARK_HOME} --strip-components 1 \

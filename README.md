@@ -1,6 +1,6 @@
 # Spark Docker Environment
 
-Docker-based Apache Spark 3.5.7 cluster with Jupyter notebooks support for data lake development (Delta Lake, Iceberg, Hudi).
+Docker-based Apache Spark 4.0.1 cluster with Jupyter notebooks support for data lake development (Delta Lake, Iceberg, Hudi).
 
 ## Requirements
 

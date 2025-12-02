@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a Docker-based Apache Spark development environment that provides a complete local Spark cluster. The project is based on Spark 3.5.5 with Python 3.12.
+This is a Docker-based Apache Spark development environment that provides a complete local Spark cluster. The project is based on Spark 4.0.1 with Python 3.12.
 
 ## Architecture
 
