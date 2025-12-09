@@ -21,6 +21,14 @@ services:
       - '7077:7077' # For spark-node-to-spark-node queries
       - '4040:4040' # Spark worker data
       - '8889:8889' # Optionaly - Jupyter web UI
+    deploy:
+      resources:
+        limits:
+          cpus: '2.0'
+          memory: 2G
+        reservations:
+          cpus: '0.5'
+          memory: 512M
 
   spark-history-server:
     container_name: spark-history
@@ -38,8 +46,8 @@ services:
     ports:
       - '18080:18080'
 
-  spark-worker:
-    container_name: spark-worker
+  spark-worker-1:
+    container_name: spark-worker-1
     build: 
       context: .
       target: pyspark-jupyter
@@ -51,6 +59,36 @@ services:
       - .env.spark
     volumes:
       - ./spark-logs:/opt/spark/spark-events
+    deploy:
+      resources:
+        limits:
+          cpus: '2.0'
+          memory: 3G
+        reservations:
+          cpus: '0.5'
+          memory: 1G
+
+  spark-worker-2:
+    container_name: spark-worker-2
+    build: 
+      context: .
+      target: pyspark-jupyter
+    image: spark-image
+    entrypoint: ['./entrypoint.sh', 'worker']
+    depends_on:
+      - spark-master
+    env_file:
+      - .env.spark
+    volumes:
+      - ./spark-logs:/opt/spark/spark-events
+    deploy:
+      resources:
+        limits:
+          cpus: '2.0'
+          memory: 3G
+        reservations:
+          cpus: '0.5'
+          memory: 1G
 
 volumes:
   spark-logs:
