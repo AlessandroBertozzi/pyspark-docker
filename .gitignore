@@ -49,3 +49,7 @@
 **/tmp/
 **/temp/
 **/*.tmp
+
+# Data
+data/*
+!data/.gitkeep

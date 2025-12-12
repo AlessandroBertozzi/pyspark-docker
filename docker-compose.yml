@@ -14,6 +14,7 @@ services:
     volumes:
       - ./notebooks:/opt/spark/notebooks
       - ./spark-logs:/opt/spark/spark-events
+      - ./data:/opt/spark/data
     env_file:
       - .env.spark
     ports:
@@ -51,6 +52,6 @@ services:
       - .env.spark
     volumes:
       - ./spark-logs:/opt/spark/spark-events
-
+      - ./data:/opt/spark/data
 volumes:
   spark-logs:
